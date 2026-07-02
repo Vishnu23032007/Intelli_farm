@@ -1,0 +1,91 @@
+# -----------------------------
+# Flutter / Dart
+# -----------------------------
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub/
+.pub-cache/
+build/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+
+# -----------------------------
+# Android
+# -----------------------------
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# -----------------------------
+# iOS
+# -----------------------------
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/App.framework
+
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+.venv/
+venv/
+env/
+
+# -----------------------------
+# IDE
+# -----------------------------
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# -----------------------------
+# OS Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Environment Variables
+# -----------------------------
+.env
+.env.*
+backend/.env
+
+# -----------------------------
+# Google Service Account Keys
+# -----------------------------
+lib/serviceAccountKey.json
+assets/farmerchatbot-xtii-45019ce0b910.json
+backend/serviceAccountKey.json
+*.json
+
+# If you have Firebase config files that SHOULD be committed,
+# comment out the *.json line above and use only the specific files.
+
+# -----------------------------
+# API Keys
+# -----------------------------
+apikeys.py
+config.py
+secrets.py
+
+# -----------------------------
+# Miscellaneous
+# -----------------------------
+*.class
+*.swp
+.history/
+.svn/
+.atom/
+.build/
+.buildlog/
+migrate_working_dir/
