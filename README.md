@@ -23,7 +23,12 @@ IntelliFarm is a state-of-the-art agricultural logistics, IoT, and AI-enabled ma
    - [Mobile Application Setup](#mobile-application-setup)
    - [Firebase Backend Setup](#firebase-backend-setup)
    - [Flask AI/ML Backend Setup](#flask-aiml-backend-setup)
-7. [Licensing & Security](#-licensing--security)
+7. [How to Run](#-how-to-run)
+   - [1. Installing the Prebuilt APK](#1-installing-the-prebuilt-apk)
+   - [2. Launching in Flutter Development Mode](#2-launching-in-flutter-development-mode)
+   - [3. Running the Python/Flask ML Server](#3-running-the-pythonflask-ml-server)
+   - [4. Running Firebase Services](#4-running-firebase-services)
+8. [Licensing & Security](#-licensing--security)
 
 ---
 
@@ -279,6 +284,65 @@ Maintains telemetry data streamed from fields.
    ```bash
    python app.py
    ```
+
+---
+
+## 🚀 How to Run
+
+This section outlines how to launch the IntelliFarm ecosystem, whether you are installing the precompiled mobile application or launching the code locally.
+
+### 1. Installing the Prebuilt APK
+For quick deployment and review on an Android device or emulator, a precompiled APK is provided directly in the root workspace directory as [Intellifarm App.apk](file:///d:/empty/Intellifarm%20App.apk).
+
+**Installation Steps:**
+1. Transfer the [Intellifarm App.apk](file:///d:/empty/Intellifarm%20App.apk) file to your physical Android device, or drag and drop it into an Android Emulator (such as Android Studio AVD, Genymotion, or BlueStacks).
+2. On your device, open your File Manager, tap on the APK file, and choose **Install**.
+3. If prompted by Android security, enable **"Install from Unknown Sources"** for your file manager or browser.
+4. Launch **IntelliFarm** from your app drawer.
+
+---
+
+### 2. Launching in Flutter Development Mode
+To run the project in development mode with Hot Reload enabled:
+1. Ensure your development environment is set up (see [Mobile Application Setup](#mobile-application-setup)).
+2. Connect your Android device via USB debugging or start an emulator.
+3. Verify your device connection:
+   ```bash
+   flutter devices
+   ```
+4. Run the project in debug mode:
+   ```bash
+   flutter run
+   ```
+5. *(Optional)* To build a new production APK release:
+   ```bash
+   flutter build apk --release
+   ```
+   The built APK will be generated at:
+   `build/app/outputs/flutter-apk/app-release.apk`
+
+---
+
+### 3. Running the Python/Flask ML Server
+The app relies on a Flask server for rain prediction, bilingual AI chats, and crop advisory guidelines.
+1. Navigate to your Flask server script directory (e.g., where `app.py` resides).
+2. Activate your virtual environment and start the Flask development server:
+   ```bash
+   python app.py
+   ```
+3. By default, the server runs on `http://127.0.0.1:5000` or the specified local IP. Ensure that the device running the Flutter app can access this IP address (they must be on the same local Wi-Fi network).
+
+---
+
+### 4. Running Firebase Services
+* **Real-time database (Firestore):** Syncs automatically with the app once configured with `google-services.json`.
+* **Firebase Cloud Functions (Local Emulation):**
+  If you want to run Firebase cloud functions locally to test notifications:
+  ```bash
+  cd functions
+  npm run serve
+  ```
+  This fires up the Firebase Cloud Functions emulator.
 
 ---
 
